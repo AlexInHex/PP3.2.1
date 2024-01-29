@@ -1,4 +1,4 @@
-package model;
+package app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +13,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
@@ -22,6 +23,11 @@ public class User {
     private String surname;
 
     public User() {
+    }
+
+    public User(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
     public Long getId() {

@@ -1,4 +1,4 @@
-package web.config;
+package app.web.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -19,8 +19,8 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "dao")
-@ComponentScan(basePackages = {"model", "web", "service", "dao"})
+@EnableJpaRepositories(basePackages = "app.dao")
+@ComponentScan(basePackages = {"app"})
 public class AppConfig {
 
     @Bean
@@ -37,7 +37,7 @@ public class AppConfig {
     public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(dataSource);
-        entityManagerFactory.setPackagesToScan("model", "dao");
+        entityManagerFactory.setPackagesToScan("app");
         entityManagerFactory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManagerFactory.setJpaProperties(jpaProperties());
         entityManagerFactory.afterPropertiesSet();

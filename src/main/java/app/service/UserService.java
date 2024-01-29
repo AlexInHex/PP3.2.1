@@ -1,7 +1,6 @@
-package service;
+package app.service;
 
-import model.User;
-import org.springframework.stereotype.Service;
+import app.model.User;
 
 import java.util.List;
 
