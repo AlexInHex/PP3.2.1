@@ -37,10 +37,7 @@ public class UserServiceImpl implements UserService {
         User existingUser = getUserById(id);
 
         if (existingUser != null) {
-            // Обновляю данные пользователя
             existingUser.setName(updatedUser.getName());
-
-            // Сохраняю обновленного пользователя в базу данных
             userDAO.save(existingUser);
         }
     }
