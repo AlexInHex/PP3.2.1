@@ -38,6 +38,7 @@ public class UserServiceImpl implements UserService {
 
         if (existingUser != null) {
             existingUser.setName(updatedUser.getName());
+            existingUser.setSurname(updatedUser.getSurname());
             userDAO.save(existingUser);
         }
     }
